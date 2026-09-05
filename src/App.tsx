@@ -83,7 +83,7 @@ export default function App() {
             <p className="mt-3 flex flex-wrap items-center justify-center gap-2 text-[0.95rem] text-[var(--color-muted)] md:justify-start">
               <span className="inline-flex items-center gap-2">
                 <IconAcademicCap className="h-[1.1em] w-[1.1em] shrink-0 text-stone-500" />
-                <span>Undergraduate · Computer Science</span>
+                <span>PhD Student · Computer Science</span>
               </span>
             </p>
             <p className="mt-2 flex items-center justify-center gap-2 text-[0.95rem] text-[var(--color-muted)] md:justify-start">

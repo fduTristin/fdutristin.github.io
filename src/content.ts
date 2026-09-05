@@ -2,14 +2,18 @@ export const profile = {
   name: "Houze Xu",
   avatar: "/avatar.png",
   github: "https://github.com/fduTristin",
-  email: "houzexu22@m.fudan.edu.cn",
+  email: "hzxu26@m.fudan.edu.cn",
   location: "Shanghai, China",
   school: "Fudan University",
   about:
-    "I am a senior undergraduate student majoring in Computer Science at the School of Computer Science, Fudan University.",
+    "I am a first-year PhD student in Computer Science at the School of Computer Science, Fudan University.",
   education: [
     {
-      period: "2022.09 — 2026.06 (Expected)",
+      period: "2026.09 — Present",
+      detail: "Fudan University, PhD in Computer Science",
+    },
+    {
+      period: "2022.09 — 2026.06",
       detail: "Fudan University, Bachelor of Science in Computer Science",
     },
   ],
