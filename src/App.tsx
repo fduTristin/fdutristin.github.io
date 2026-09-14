@@ -118,7 +118,7 @@ export default function App() {
 
         <div className="mt-10 md:mt-12">
           <Section id="about" title="About">
-            <p className="text-[var(--color-ink)]/90">{profile.about}</p>
+            <p className="text-[var(--color-ink)]/90"><RichText text={profile.about} /></p>
           </Section>
 
           <Section id="education" title="Education">
@@ -134,27 +134,6 @@ export default function App() {
 
           <Section id="research" title="Research Interests">
             <p className="text-[var(--color-ink)]/90">{profile.research}</p>
-          </Section>
-
-          <Section id="projects" title="Projects">
-            <ul className="space-y-4">
-              {profile.projects.map((p) => (
-                <li key={p.url}>
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-baseline gap-1 font-medium text-[var(--color-accent)]"
-                  >
-                    <span className="border-b border-transparent transition group-hover:border-[var(--color-accent)]/40">
-                      {p.title}
-                    </span>
-                    <ExternalIcon />
-                  </a>
-                  <p className="mt-1.5 pl-0 text-[var(--color-muted)]">{p.description}</p>
-                </li>
-              ))}
-            </ul>
           </Section>
 
           <Section id="teaching" title="Teaching">

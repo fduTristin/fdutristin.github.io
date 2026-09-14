@@ -6,7 +6,7 @@ export const profile = {
   location: "Shanghai, China",
   school: "Fudan University",
   about:
-    "I am a first-year PhD student in Computer Science at the School of Computer Science, Fudan University.",
+    "I'm a first-year Ph.D. student in [FVL](https://fvl.fudan.edu.cn/), College of Computer Science, Fudan University, under the supervision of [Zuxuan Wu](https://zxwu.azurewebsites.net/) and [Ziyi Ye](https://zxwu.azurewebsites.net/).",
   education: [
     {
       period: "2026.09 — Present",
@@ -19,19 +19,6 @@ export const profile = {
   ],
   research:
     "My current research focuses on Embodied AI, especially long-horizon planning.",
-  projects: [
-    {
-      title: "OpenTreeHole",
-      url: "https://github.com/OpenTreeHole",
-      description:
-        "Open-Source Anonymous Forum for Fudan (a.k.a. 树洞 or 茶楼)",
-    },
-    {
-      title: "CS101",
-      url: "https://cs101.fducslg.com/",
-      description: "A Beginner's Guide to Computer Science for Fudaners",
-    },
-  ],
   teaching: [
     {
       role: "Operating Systems (Honors Track)",
