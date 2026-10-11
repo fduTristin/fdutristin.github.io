@@ -20,7 +20,35 @@
   }
 }
 
-.publication-link:focus-visible {
+.publication-link:focus-visible,
+.profile-contact-link:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
+}
+
+.profile-cover {
+  height: clamp(240px, 38vw, 560px);
+  max-height: 40vh;
+  overflow: hidden;
+  background: #8fb3cc;
+}
+
+.profile-cover img {
+  display: block;
+  object-position: 50% 24%;
+}
+
+@media (max-width: 767px) {
+  .profile-cover {
+    height: auto;
+    min-height: 180px;
+    max-height: none;
+  }
+
+  .profile-cover img {
+    width: 100%;
+    height: auto;
+    min-height: 180px;
+    object-position: center;
+  }
 }

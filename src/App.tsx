@@ -1,11 +1,9 @@
 import { Fragment, type ReactNode } from "react";
 import { profile } from "./content";
 import {
-  IconAcademicCap,
   IconBuildingLibrary,
   IconEnvelope,
   IconGitHub,
-  IconMapPin,
 } from "./icons";
 import { RichText } from "./RichText";
 
@@ -40,62 +38,62 @@ export default function App() {
         Skip to content
       </a>
 
-      <main id="main" className="mx-auto max-w-5xl px-5 pb-16 pt-12 md:px-8 md:pt-16">
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-10">
+      <div className="profile-cover" aria-hidden="true">
+        <img
+          src={profile.cover}
+          alt=""
+          width={1706}
+          height={483}
+          fetchPriority="high"
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <main id="main" className="relative mx-auto -mt-14 max-w-5xl px-5 pb-16 md:-mt-16 md:px-8">
+        <header className="flex flex-col gap-5 md:flex-row md:items-start md:gap-10">
           <div className="mx-auto shrink-0 md:mx-0">
-            <div className="relative">
-              <div
-                className="absolute -inset-1 rounded-full bg-gradient-to-br from-stone-200 to-stone-100 opacity-80"
-                aria-hidden
-              />
-              <img
-                src={profile.avatar}
-                alt=""
-                width={160}
-                height={160}
-                className="relative block h-36 w-36 rounded-full border border-stone-200/90 object-cover shadow-sm md:h-40 md:w-40"
-              />
-            </div>
+            <img
+              src={profile.avatar}
+              alt=""
+              width={160}
+              height={160}
+              className="block h-36 w-36 rounded-full object-cover shadow-[0_2px_14px_rgba(0,0,0,0.22)] md:h-40 md:w-40"
+            />
           </div>
-          <div className="min-w-0 flex-1 text-center md:text-left">
-            <p className="font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink)] md:text-4xl">
+          <div className="min-w-0 flex-1 text-center md:pt-[88px] md:text-left">
+            <h1 className="font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink)] md:text-4xl">
               {profile.name}
-            </p>
-            <p className="mt-3 flex flex-wrap items-center justify-center gap-2 text-[0.95rem] text-[var(--color-muted)] md:justify-start">
+            </h1>
+            <div className="mt-3 flex flex-col items-center justify-center gap-x-4 gap-y-1 text-base text-[var(--color-muted)] md:flex-row md:flex-wrap md:justify-start">
               <span className="inline-flex items-center gap-2">
-                <IconAcademicCap className="h-[1.1em] w-[1.1em] shrink-0 text-stone-500" />
-                <span>PhD Student · Computer Science</span>
+                <IconBuildingLibrary className="h-[1em] w-[1em] shrink-0" />
+                <span>{profile.school}</span>
               </span>
-            </p>
-            <p className="mt-2 flex items-center justify-center gap-2 text-[0.95rem] text-[var(--color-muted)] md:justify-start">
-              <IconBuildingLibrary className="h-[1.1em] w-[1.1em] shrink-0 text-stone-500" />
-              <span>{profile.school}</span>
-            </p>
-            <p className="mt-2 flex items-center justify-center gap-2 text-sm text-stone-500 md:justify-start">
-              <IconMapPin className="h-[1.05em] w-[1.05em] shrink-0 text-stone-400" />
-              <span>{profile.location}</span>
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
-              <a
-                href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 rounded-md border border-stone-300/90 bg-white px-3.5 py-2 text-sm font-medium text-[var(--color-ink)] shadow-sm transition hover:border-stone-400 hover:bg-stone-50"
-              >
-                <IconEnvelope className="h-4 w-4 text-stone-500" />
-                Email
-              </a>
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md border border-stone-300/90 bg-white px-3.5 py-2 text-sm font-medium text-[var(--color-ink)] shadow-sm transition hover:border-stone-400 hover:bg-stone-50"
-                title="GitHub profile"
-              >
-                <IconGitHub className="h-4 w-4 text-stone-700" />
-                GitHub
-              </a>
+              <div className="flex shrink-0 items-center gap-3">
+                <a
+                  href={`mailto:${profile.email}`}
+                  aria-label="Email"
+                  title={`Email: ${profile.email}`}
+                  className="profile-contact-link inline-flex min-h-11 items-center justify-center gap-2 rounded-md text-[var(--color-muted)] hover:text-[var(--color-accent)] hover:underline hover:underline-offset-4"
+                >
+                  <IconEnvelope className="h-[1em] w-[1em] shrink-0" />
+                  Email
+                </a>
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                  className="profile-contact-link inline-flex min-h-11 items-center justify-center gap-2 rounded-md text-[var(--color-muted)] hover:text-[var(--color-accent)] hover:underline hover:underline-offset-4"
+                  title="GitHub profile"
+                >
+                  <IconGitHub className="h-[1em] w-[1em] shrink-0" />
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </header>
 
         <div className="mt-10 md:mt-12">
           <Section id="about" title="About">

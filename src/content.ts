@@ -1,6 +1,7 @@
 export const profile = {
   name: "Houze Xu",
   avatar: "/avatar.png",
+  cover: "/background.png",
   github: "https://github.com/fduTristin",
   email: "hzxu26@m.fudan.edu.cn",
   location: "Shanghai, China",
