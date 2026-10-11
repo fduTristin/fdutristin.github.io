@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { profile } from "./content";
 import {
   IconAcademicCap,
@@ -30,25 +30,6 @@ function Section({
   );
 }
 
-function ExternalIcon() {
-  return (
-    <svg
-      className="mb-0.5 ml-0.5 inline h-3.5 w-3.5 opacity-50"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-      aria-hidden
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-      />
-    </svg>
-  );
-}
-
 export default function App() {
   return (
     <div className="min-h-screen">
@@ -59,7 +40,7 @@ export default function App() {
         Skip to content
       </a>
 
-      <main id="main" className="mx-auto max-w-3xl px-5 pb-16 pt-12 md:px-8 md:pt-16">
+      <main id="main" className="mx-auto max-w-5xl px-5 pb-16 pt-12 md:px-8 md:pt-16">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-10">
           <div className="mx-auto shrink-0 md:mx-0">
             <div className="relative">
@@ -136,6 +117,75 @@ export default function App() {
             <p className="text-[var(--color-ink)]/90">{profile.research}</p>
           </Section>
 
+          <Section id="publications" title="Publications">
+            <ul className="list-none space-y-8 pl-0">
+              {profile.publications.map((publication) => (
+                <li key={publication.id}>
+                  <article
+                    aria-labelledby={`publication-${publication.id}`}
+                    className="grid items-start gap-4 md:grid-cols-[280px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[340px_minmax(0,1fr)] lg:gap-8"
+                  >
+                    <div className="relative rounded-md border border-stone-200/80 bg-white">
+                      <img
+                        src={publication.image}
+                        alt={publication.imageAlt}
+                        width={publication.imageWidth}
+                        height={publication.imageHeight}
+                        loading="lazy"
+                        decoding="async"
+                        className="block h-auto w-full rounded-md"
+                      />
+                      {publication.venueShort && (
+                        <span className="pointer-events-none absolute -left-0.5 -top-0.5 rounded-sm bg-[var(--color-accent)]/80 px-4 py-1.5 text-sm font-semibold leading-5 text-white shadow-md backdrop-blur-sm">
+                          {publication.venueShort} {publication.year}
+                        </span>
+                      )}
+                    </div>
+                    <div className="min-w-0">
+                      <h3
+                        id={`publication-${publication.id}`}
+                        className="text-lg font-semibold leading-snug text-[var(--color-accent)]"
+                      >
+                        <a
+                          href={publication.paperUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="publication-link hover:underline hover:underline-offset-4"
+                        >
+                          {publication.title}
+                        </a>
+                      </h3>
+                      <p className="mt-2 text-base leading-relaxed">
+                        {publication.authors.map((author, index) => (
+                          <Fragment key={author}>
+                            {index > 0 && ", "}
+                            {author === profile.name ? (
+                              <strong className="font-bold text-[var(--color-ink)]">{author}</strong>
+                            ) : (
+                              author
+                            )}
+                          </Fragment>
+                        ))}
+                      </p>
+                      <p className="mt-2 text-base italic text-stone-500">{publication.venue}</p>
+                      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-base font-medium text-[var(--color-accent)]">
+                        <a
+                          href={publication.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="publication-link inline-flex items-center gap-2 hover:underline hover:underline-offset-4"
+                        >
+                          <IconGitHub className="h-4 w-4 shrink-0" />
+                          Code
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+              ))}
+            </ul>
+          </Section>
+
           <Section id="teaching" title="Teaching">
             <div className="space-y-6">
               {profile.teaching.map((block) => (
@@ -168,7 +218,7 @@ export default function App() {
       </main>
 
       <footer className="border-t border-stone-200/80 bg-stone-100/40 py-6">
-        <div className="mx-auto max-w-3xl px-5 text-center text-sm text-stone-500 md:px-8">
+        <div className="mx-auto max-w-5xl px-5 text-center text-sm text-stone-500 md:px-8">
           {profile.copyright}
         </div>
       </footer>

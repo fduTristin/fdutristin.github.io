@@ -19,6 +19,41 @@ export const profile = {
   ],
   research:
     "My current research focuses on Embodied AI, especially long-horizon planning.",
+  publications: [
+    {
+      id: "openvitac",
+      title:
+        "OpenViTac: Learning and Benchmarking Visuo-Tactile Policies in a Unified Sim-and-Real Framework",
+      authors: [
+        "Yifan Wu",
+        "Qin Li",
+        "Nan Min",
+        "Guojin Zhong",
+        "Haoyu Zhao",
+        "Zhiyuan Li",
+        "Houze Xu",
+        "Shengqi Xu",
+        "Xingyao Lin",
+        "Zijie Diao",
+        "Zhaoxiang Liu",
+        "Shiguo Lian",
+        "Shunlin Lu",
+        "Shihao Zhao",
+        "Ziyi Ye",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang",
+      ],
+      image: "/publications/openvitac-teaser.webp",
+      imageWidth: 2000,
+      imageHeight: 1446,
+      imageAlt: "Overview of the OpenViTac visuo-tactile benchmark and OpenVTLA framework",
+      venue: "arXiv preprint, 2026",
+      venueShort: "arXiv",
+      year: 2026,
+      paperUrl: "https://arxiv.org/pdf/2610.10384v1",
+      githubUrl: "https://github.com/FVL-Repo/OpenViTac",
+    },
+  ],
   teaching: [
     {
       role: "Operating Systems (Honors Track)",
